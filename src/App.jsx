@@ -38,12 +38,15 @@ const App = () => {
 
   return (
     <div className="portfolio">
+      <div className="bg-blobs">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
+      </div>
+
       <nav>
         <div className="container nav-container">
           <div className="logo">PushpRaj</div>
-          <div className="nav-links">
-            {/* Added simple nav for UX */}
-          </div>
         </div>
       </nav>
 
@@ -67,19 +70,17 @@ const App = () => {
         {/* About Section */}
         <section id="about" className="container">
           <h2 className="section-title">About Me</h2>
-          <div className="glass-card about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'center' }}>
+          <div className="glass-card about-grid">
             <div className="about-text">
               <p>I am currently pursuing a Bachelor of Technology in Computer Science and Engineering from Lovely Professional University.</p>
-              <br />
               <p>I am passionate about software development, data analytics, and building efficient systems. I enjoy working with modern technologies and continuously learning new tools that help solve real-world problems.</p>
-              <br />
               <p>My interests include web development, backend systems, and data visualization. I aim to build impactful digital products that improve user experiences and decision-making.</p>
             </div>
-            <div className="about-img" style={{ textAlign: 'center' }}>
+            <div className="about-img-container">
                <img 
                 src="/Puspa Image.jpg" 
                 alt="Pushp Raj" 
-                style={{ width: '100%', maxWidth: '300px', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.4)', border: '4px solid var(--border-color)' }}
+                className="about-img"
                />
             </div>
           </div>
@@ -110,7 +111,7 @@ const App = () => {
               <div key={index} className="glass-card project-card">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <ul style={{ paddingLeft: '1.2rem', marginTop: '1rem', color: 'var(--text-muted)' }}>
+                <ul className="project-features">
                   {project.features.map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
@@ -129,12 +130,12 @@ const App = () => {
         <section id="training" className="container">
           <h2 className="section-title">Training & Experience</h2>
           <div className="glass-card">
-            <h3 style={{ color: 'var(--accent-purple)' }}>Data Science Training – Lovely Professional University</h3>
-            <p style={{ marginTop: '0.5rem' }}>Completed hands-on training in Data Science focusing on business intelligence and data visualization.</p>
-            <div className="grid grid-2" style={{ marginTop: '1.5rem' }}>
+            <h3 className="item-title">Data Science Training – Lovely Professional University</h3>
+            <p className="item-subtitle">Completed hands-on training in Data Science focusing on business intelligence and data visualization.</p>
+            <div className="grid grid-2" style={{ marginTop: '2rem' }}>
               <div>
                 <h4>Key Learnings:</h4>
-                <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.2rem' }}>
+                <ul className="project-features">
                   <li>Built Power BI dashboards</li>
                   <li>Data cleaning using Power Query</li>
                   <li>Data modeling and relationships</li>
@@ -157,26 +158,26 @@ const App = () => {
         <section id="education" className="container">
           <div className="grid grid-2">
             <div className="glass-card">
-              <h2 className="section-title">Education</h2>
-              <div className="edu-item" style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: 'var(--accent-blue)' }}>Lovely Professional University</h4>
-                <p>B.Tech in Computer Science Engineering</p>
-              </div>
-              <div className="edu-item" style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: 'var(--accent-blue)' }}>PPM Public School, Bihar</h4>
-                <p>Intermediate – 83%</p>
+              <h2 className="section-title" style={{ position: 'static', transform: 'none', textAlign: 'left', marginBottom: '2rem' }}>Education</h2>
+              <div className="edu-item">
+                <h4 className="item-title">Lovely Professional University</h4>
+                <p className="item-subtitle">B.Tech in Computer Science Engineering</p>
               </div>
               <div className="edu-item">
-                <h4 style={{ color: 'var(--accent-blue)' }}>PPS Public School, Bihar</h4>
-                <p>Matriculation – 86%</p>
+                <h4 className="item-title">PPM Public School, Bihar</h4>
+                <p className="item-subtitle">Intermediate – 83%</p>
+              </div>
+              <div className="edu-item">
+                <h4 className="item-title">PPS Public School, Bihar</h4>
+                <p className="item-subtitle">Matriculation – 86%</p>
               </div>
             </div>
             
             <div className="glass-card">
-              <h2 className="section-title">Certifications</h2>
+              <h2 className="section-title" style={{ position: 'static', transform: 'none', textAlign: 'left', marginBottom: '2rem' }}>Certifications</h2>
               <div className="cert-item">
-                <h4 style={{ color: 'var(--accent-purple)' }}>Cloud Computing</h4>
-                <p>NPTEL Certification</p>
+                <h4 className="item-title" style={{ color: 'var(--accent-purple)' }}>Cloud Computing</h4>
+                <p className="item-subtitle">NPTEL Certification</p>
               </div>
             </div>
           </div>
@@ -186,9 +187,9 @@ const App = () => {
         <section id="contact" className="container" style={{ textAlign: 'center' }}>
           <h2 className="section-title">Get In Touch</h2>
           <div className="glass-card">
-            <p style={{ marginBottom: '2rem', color: 'var(--text-muted)' }}>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+            <p style={{ marginBottom: '2.5rem', color: 'var(--text-muted)', fontSize: '1.2rem' }}>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
             <div className="contact-links">
-              <a href="mailto:pushpraj1804@gmail.com" className="contact-item">Email: pushpraj1804@gmail.com</a>
+              <a href="mailto:pushpraj1804@gmail.com" className="contact-item">Email Me</a>
               <a href="https://github.com/pushpraj1804" target="_blank" className="contact-item">GitHub</a>
               <a href="https://linkedin.com/in/pushpraj1804" target="_blank" className="contact-item">LinkedIn</a>
             </div>
@@ -196,34 +197,9 @@ const App = () => {
         </section>
       </main>
 
-      <footer style={{ padding: '2rem 0', textAlign: 'center', color: 'var(--text-muted)', borderTop: '1px solid var(--border-color)' }}>
+      <footer>
         <p>&copy; 2026 Pushp Raj. Built with React & Passion.</p>
       </footer>
-
-      <style>{`
-        .section-title {
-          font-size: 2.5rem;
-          margin-bottom: 2.5rem;
-          text-align: center;
-          background: var(--secondary-gradient);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-        
-        .edu-item h4, .cert-item h4 {
-          margin-bottom: 0.2rem;
-        }
-        
-        .hero .intro {
-          max-width: 700px;
-          margin: 0 auto 2rem;
-        }
-        
-        @keyframes slideIn {
-          from { opacity: 0; transform: translateX(-20px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-      `}</style>
     </div>
   );
 };
